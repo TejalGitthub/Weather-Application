@@ -9,7 +9,7 @@ This project is a full-stack weather application built using React for the front
 ### Technologies Used:
 - Frontend: React.js
 - Backend: Node.js, Express.js
-- Database: MySQL (SQL)
+- Database: MySQL 
 - Authentication: JWT (JSON Web Tokens)
 - API: WeatherStack API for weather data
 ### Prerequisites
@@ -20,14 +20,25 @@ Before running the project, ensure you have the following installed:
 ### Getting Started 
 #### Step 1: Clone the repository
 git clone https://github.com/TejalGittHub/Weather-Application
-#### Step 2: Backend Setup
-##### 1. Navigate to the Backend Folder:
+#### Step 2: Navigate to Your Project Folder:
+cd YourProjectFolderName
+#### Step 3: Backend Setup
+  #####   1. Navigate to the Backend Folder:
 
    cd backend
 
 ##### 2. Install backend dependencies:
 
-   npm install
+   **npm install**
+
+   The backend uses the following dependencies:
+
+   - express: A minimal web framework for building the server.
+   - jsonwebtoken: For generating and verifying JWT tokens for authentication.
+   - bcrypt: To hash and compare passwords securely.
+   - mysql2: For connecting to and querying the MySQL database.
+   - axios: For making HTTP requests.
+   - cors: To enable Cross-Origin Resource Sharing between frontend and backend.
 
 ##### 3. Create a .env file in the backend folder to store your environment variables:
 
@@ -49,30 +60,45 @@ Replace your_weatherstack_api_key and your_jwt_secret_key with your actual API k
 ##### 4. Create the database tables using MySQL schema provided below. Make sure you have MySQL running and a database created.
 #### Step 3. Database Setup
 1. Create the necessary tables in your MySQL database:
-#### users Table:
 
-CREATE TABLE users (
+   #### users Table:
 
-  id INT AUTO_INCREMENT PRIMARY KEY,
+        CREATE TABLE users (
+
+              id INT AUTO_INCREMENT PRIMARY KEY,
   
-  user_name VARCHAR(255) NOT NULL UNIQUE,
+              user_name VARCHAR(255) NOT NULL UNIQUE,
   
-  username VARCHAR(255) NOT NULL UNIQUE,
+              username VARCHAR(255) NOT NULL UNIQUE,
   
-  password VARCHAR(255) NOT NULL,
+              password VARCHAR(255) NOT NULL,
   
-  role ENUM('admin', 'user') NOT NULL
+              role ENUM('admin', 'user') NOT NULL
   
-);
-#### weather_logs Table:
+         );
+   #### weather_logs Table:
 
-2. Start the backend server
+        CREATE TABLE weather_logs (
 
-To run the backend server, navigate to the backend directory and run the following command:
+              id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 
-node index.js
+              user_id INT NOT NULL,
 
-This will start the backend on http://localhost:5000.
+              city VARCHAR(255) NOT NULL,
+
+              weather_info JSON NOT NULL,
+
+              FOREIGN KEY (user_id) REFERENCES users(id)
+   
+          );
+
+3. Start the backend server
+
+   To run the backend server, navigate to the backend directory and run the following command:
+
+   **node index.js**
+
+   This will start the backend on http://localhost:5000.
 
 #### Step 4. Frontend Setup
 
@@ -82,31 +108,38 @@ This will start the backend on http://localhost:5000.
 
 3. Install frontend dependencies:
 
-   npm install
+   **npm install**
 
  4. Start the frontend server
 
-   npm start
+     **npm start**
 
-  This will start the frontend on http://localhost:3000.
+     This will start the frontend on http://localhost:3000.
 
 #### Step 5: Running the Application
-1.To run the backend and frontend applications, follow the instructions below.
-2.Start the frontend server:
+
+1. To run the backend and frontend applications, follow the instructions below.
+  
+2. Start the frontend server:
+   
   Navigate to the frontend directory and run following command in terminal:
 
-  npm start
+  **npm start**
 
   Running npm start will automatically open the application in your browser at http://localhost:3000.
+  
 3. Start the backend server:
 
-Navigate to the backend directory and run following command in terminal:
+   Navigate to the backend directory and run following command in terminal:
 
-node index.js
+   **node index.js**
 
-4. Sign Up: Register a new user by providing a username, password, and role (user or admin).
+4. Sign Up: Register a new user by providing a name, username, password, and role (user or admin).
+   
 5. Login: Use the registered credentials to log in.
-6. Weather Search: Users with the role of "user" can search for weather data of a city. This feature is only accessible by users with the "user" role. An active internet connection is required to fetch weather data from the external weather API.
+ 
+6. Weather Search: Users with the role of "user" can search for weather data of a city. This feature is only accessible by users with the "user" role. **An active internet connection** is required to fetch weather data from the external weather API.
+ 
 7. Admin Dashboard: Admin users can view the weather search reports.
 
 ### API Usage
