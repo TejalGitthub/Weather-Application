@@ -23,11 +23,11 @@ git clone https://github.com/TejalGittHub/Weather-Application
 #### Step 2: Navigate to Your Project Folder:
 cd YourProjectFolderName
 #### Step 3: Backend Setup
-  #####   1. Navigate to the Backend Folder:
+  ####  1. Navigate to the Backend Folder:
 
    cd backend
 
-##### 2. Install backend dependencies:
+#### 2. Install backend dependencies:
 
    **npm install**
 
@@ -40,7 +40,7 @@ cd YourProjectFolderName
    - axios: For making HTTP requests.
    - cors: To enable Cross-Origin Resource Sharing between frontend and backend.
 
-##### 3. Create a .env file in the backend folder to store your environment variables:
+#### 3. Create a .env file in the backend folder to store your environment variables:
 
    Example .env file:
 
@@ -57,7 +57,7 @@ cd YourProjectFolderName
     JWT_SECRET=your_jwt_secret_key
 
 Replace your_weatherstack_api_key and your_jwt_secret_key with your actual API key and secret. Update the database credentials accordingly.
-##### 4. Create the database tables using MySQL schema provided below. Make sure you have MySQL running and a database created.
+#### 4. Create the database tables using MySQL schema provided below. Make sure you have MySQL running and a database created.
 #### Step 3. Database Setup
 1. Create the necessary tables in your MySQL database:
 
