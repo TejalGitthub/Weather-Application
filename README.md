@@ -42,44 +42,45 @@ Before running the project, ensure you have the following installed:
 
    3. Create a .env file in the backend folder to store your environment variables:
 
-     Example .env file:
+  Example .env file:
 
-        WEATHER_API_KEY=your_weatherstack_api_key
+            WEATHER_API_KEY=your_weatherstack_api_key
+ 
+            DB_HOST=localhost
 
-        DB_HOST=localhost
+            DB_USER=root
 
-        DB_USER=root
+            DB_PASSWORD=your_password
 
-        DB_PASSWORD=your_password
+            DB_NAME=weather_app
 
-        DB_NAME=weather_app
-
-        JWT_SECRET=your_jwt_secret_key
+            JWT_SECRET=your_jwt_secret_key
 
   Replace your_weatherstack_api_key and your_jwt_secret_key with your actual API key and secret. Update the database credentials accordingly.
 
    4. Create the database tables using MySQL schema provided below. Make sure you have MySQL running and a database created.
-#### Step 4. Database Setup
-1. Create the necessary tables in your MySQL database:
+ #### Step 4. Database Setup
+   1. Create the necessary tables in your MySQL database:
 
-   #### users Table:
+      #### users Table:
 
-        CREATE TABLE users (
+          CREATE TABLE users (
 
-              id INT AUTO_INCREMENT PRIMARY KEY,
+                id INT AUTO_INCREMENT PRIMARY KEY,
   
-              user_name VARCHAR(255) NOT NULL UNIQUE,
+                user_name VARCHAR(255) NOT NULL UNIQUE,
   
-              username VARCHAR(255) NOT NULL UNIQUE,
+                username VARCHAR(255) NOT NULL UNIQUE,
   
-              password VARCHAR(255) NOT NULL,
+                password VARCHAR(255) NOT NULL,
   
-              role ENUM('admin', 'user') NOT NULL
+                role ENUM('admin', 'user') NOT NULL
   
-         );
-   #### weather_logs Table:
+           );
+      
+      #### weather_logs Table:
 
-        CREATE TABLE weather_logs (
+          CREATE TABLE weather_logs (
 
               id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 
