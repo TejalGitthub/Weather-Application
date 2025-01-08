@@ -19,46 +19,47 @@ Before running the project, ensure you have the following installed:
 - WeatherStack API Key for fetching weather data
 ### Getting Started 
 #### Step 1: Clone the repository
-git clone https://github.com/TejalGittHub/Weather-Application
+      git clone https://github.com/TejalGittHub/Weather-Application
 #### Step 2: Navigate to Your Project Folder:
-cd YourProjectFolderName
+      cd YourProjectFolderName
 #### Step 3: Backend Setup
-  ####  1. Navigate to the Backend Folder:
+  1. Navigate to the Backend Folder:
 
-   cd backend
+         cd backend
 
-#### 2. Install backend dependencies:
+  2. Install backend dependencies:
 
-   **npm install**
+         npm install
 
-   The backend uses the following dependencies:
+     The backend uses the following dependencies:
 
-   - express: A minimal web framework for building the server.
-   - jsonwebtoken: For generating and verifying JWT tokens for authentication.
-   - bcrypt: To hash and compare passwords securely.
-   - mysql2: For connecting to and querying the MySQL database.
-   - axios: For making HTTP requests.
-   - cors: To enable Cross-Origin Resource Sharing between frontend and backend.
+     - express: A minimal web framework for building the server.
+     - jsonwebtoken: For generating and verifying JWT tokens for authentication.
+     - bcrypt: To hash and compare passwords securely.
+     - mysql2: For connecting to and querying the MySQL database.
+     - axios: For making HTTP requests.
+     - cors: To enable Cross-Origin Resource Sharing between frontend and backend.
 
-#### 3. Create a .env file in the backend folder to store your environment variables:
+   3. Create a .env file in the backend folder to store your environment variables:
 
-   Example .env file:
+     Example .env file:
 
-    WEATHER_API_KEY=your_weatherstack_api_key
+        WEATHER_API_KEY=your_weatherstack_api_key
 
-    DB_HOST=localhost
+        DB_HOST=localhost
 
-    DB_USER=root
+        DB_USER=root
 
-    DB_PASSWORD=your_password
+        DB_PASSWORD=your_password
 
-    DB_NAME=weather_app
+        DB_NAME=weather_app
 
-    JWT_SECRET=your_jwt_secret_key
+        JWT_SECRET=your_jwt_secret_key
 
-Replace your_weatherstack_api_key and your_jwt_secret_key with your actual API key and secret. Update the database credentials accordingly.
-#### 4. Create the database tables using MySQL schema provided below. Make sure you have MySQL running and a database created.
-#### Step 3. Database Setup
+  Replace your_weatherstack_api_key and your_jwt_secret_key with your actual API key and secret. Update the database credentials accordingly.
+
+   4. Create the database tables using MySQL schema provided below. Make sure you have MySQL running and a database created.
+#### Step 4. Database Setup
 1. Create the necessary tables in your MySQL database:
 
    #### users Table:
@@ -96,51 +97,55 @@ Replace your_weatherstack_api_key and your_jwt_secret_key with your actual API k
 
    To run the backend server, navigate to the backend directory and run the following command:
 
-   **node index.js**
+       node index.js
 
    This will start the backend on http://localhost:5000.
 
-#### Step 4. Frontend Setup
+#### Step 5. Frontend Setup
 
 1. Navigate to the frontend folder:
 
-   cd frontend
+       cd frontend
 
 3. Install frontend dependencies:
 
-   **npm install**
+       npm install
 
  4. Start the frontend server
 
-     **npm start**
+        npm start
 
      This will start the frontend on http://localhost:3000.
 
-#### Step 5: Running the Application
+#### Step 6: Running the Application
 
-1. To run the backend and frontend applications, follow the instructions below.
+To run the backend and frontend applications, follow the instructions below.
   
-2. Start the frontend server:
+1. Start the frontend server:
    
-  Navigate to the frontend directory and run following command in terminal:
+ Navigate to the frontend directory and run following command in terminal:
 
-  **npm start**
+       npm start
 
   Running npm start will automatically open the application in your browser at http://localhost:3000.
   
-3. Start the backend server:
+2. Start the backend server:
 
    Navigate to the backend directory and run following command in terminal:
 
-   **node index.js**
-
-4. Sign Up: Register a new user by providing a name, username, password, and role (user or admin).
+       node index.js
    
-5. Login: Use the registered credentials to log in.
+   This starts the backend server.
+
+   Now the Application has started and is ready to test. You will see the application with Sign Up and Login options.
+
+ 3. Sign Up: Register a new user by providing a name, username, password, and role (user or admin).
+   
+ 4. Login: Use the registered credentials to log in.
  
-6. Weather Search: Users with the role of "user" can search for weather data of a city. This feature is only accessible by users with the "user" role. **An active internet connection** is required to fetch weather data from the external weather API.
+ 5. Weather Search: Users with the role of "user" can search for weather data of a city. This feature is only accessible by users with the "user" role. **An active internet connection** is required to test this feature.
  
-7. Admin Dashboard: Admin users can view the weather search reports.
+7. Admin Dashboard: Admin users(users with role 'admin') can view the weather search reports.
 
 ### API Usage
 - WeatherStack API: This app uses the WeatherStack API to fetch weather data. You need to create an account on their platform and get an API key to use the service.
