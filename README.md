@@ -56,7 +56,7 @@ Before running the project, ensure you have the following installed:
 
             JWT_SECRET=your_jwt_secret_key
 
-  Replace your_weatherstack_api_key and your_jwt_secret_key with your actual API key and secret. Update the database credentials accordingly.
+  Replace your_weatherstack_api_key and your_jwt_secret_key with your actual API key and your secret key. Update the database credentials accordingly.
 
    4. Create the database tables using MySQL schema provided below. Make sure you have MySQL running and a database created.
  #### Step 4. Database Setup
