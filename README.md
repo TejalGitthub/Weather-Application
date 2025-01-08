@@ -94,14 +94,6 @@ Before running the project, ensure you have the following installed:
    
           );
 
-3. Start the backend server
-
-   To run the backend server, navigate to the backend directory and run the following command:
-
-       node index.js
-
-   This will start the backend on http://localhost:5000.
-
 #### Step 5. Frontend Setup
 
 1. Navigate to the frontend folder:
