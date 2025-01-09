@@ -124,7 +124,7 @@ To run the backend and frontend applications, follow the instructions below.
   
 2. Start the backend server:
 
-   Navigate to the backend directory and run following command in terminal:
+ Navigate to the backend directory and run following command in terminal:
 
        node index.js
    
